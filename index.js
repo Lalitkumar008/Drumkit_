@@ -1,0 +1,77 @@
+//using click
+// var n=document.querySelectorAll("button").length;
+// for(var i=0;i<n;i++)
+// document.querySelectorAll("button")[i].addEventListener("click",function(){
+//     var innerHtml=this.innerHTML;
+//  makeSound(innerHtml);
+//  buttonAnimation(innerHtml);
+
+// });
+
+//Using jQuery for click
+$("button").on("click",function(){
+    var text=this.innerHTML;
+    makeSound(text);
+    buttonAnimation(text);
+});
+
+
+// //using keypress
+// document.addEventListener("keypress",function(event){
+//     makeSound(event.key);
+//     buttonAnimation(event.key);  
+//  //   alert("key is pressed");
+// });
+
+
+//using jQuery for keypress
+$("button").on("keypress",function(event){
+    makeSound(event.key);
+    buttonAnimation(evnet,key);
+    buttonAnimation1(event.key);
+    })
+function makeSound(key)
+{
+    switch(key){
+        case "w":  var w=new Audio("sounds/tom-1.mp3");
+                     w.play();
+                     break;
+                   
+                     case "a":  var a=new Audio("sounds/tom-2.mp3");
+                     a.play();
+                     break;
+        
+                     case "s":  var s=new Audio("sounds/tom-3.mp3");
+                     s.play();
+                     break;
+                     
+                     case "d":  var d=new Audio("sounds/tom-4.mp3");
+                     d.play();
+                     break;
+                     
+                     case "j":  var j=new Audio("sounds/kick-bass.mp3");
+                     j.play();
+                     break;
+                     
+                     case "k":  var k=new Audio("sounds/snare.mp3");
+                     k.play();
+                     break;
+        
+                     case "l":  var l=new Audio("sounds/crash.mp3");
+                     l.play();
+                     break;
+}
+
+}
+//function for addingAnimation
+function buttonAnimation(currentKey){
+var activeButton=document.querySelector("."+currentKey);
+activeButton.classList.add("pressed");
+setTimeout(function(){
+    activeButton.classList.remove("pressed");
+    },200);
+}
+
+function buttonAnimation1(currentKey1){
+("body").css("color","pink");
+}
